@@ -11,6 +11,29 @@
 <li><strong>Data Integration:</strong> FinanceCraft integrates with APIs such as Alpha Vantage and Yahoo Finance to fetch real-time and historical stock market data. This data is then processed and analyzed to generate valuable insights for users.</li>
 </ul>
 
+<h2>Demo and Screenshots</h2>
+
+https://github.com/ATOMworkplace/FinanceCraft/assets/114564628/79f9cfea-9918-49b6-9e9e-6edd7c671fa8
+
+
+https://github.com/ATOMworkplace/FinanceCraft/assets/114564628/e16aa83e-6134-4529-9509-93ebbe6872dc
+
+
+![1](https://github.com/ATOMworkplace/FinanceCraft/assets/114564628/f3b2ee69-f1d7-4616-887f-8fc15ac8aa4c)
+
+![2](https://github.com/ATOMworkplace/FinanceCraft/assets/114564628/c2c72b18-aa3b-43de-8bb0-324ac3372c5f)
+
+![3](https://github.com/ATOMworkplace/FinanceCraft/assets/114564628/300adc38-8549-4225-b2d9-14a397f3b9ca)
+
+![4](https://github.com/ATOMworkplace/FinanceCraft/assets/114564628/3401e09d-aaf7-4978-b572-6c05dd8cb015)
+
+![5](https://github.com/ATOMworkplace/FinanceCraft/assets/114564628/213afc3e-5ed5-488e-ba8d-b83d4b85bc9b)
+
+![6](https://github.com/ATOMworkplace/FinanceCraft/assets/114564628/02ca9070-35b8-4e92-98df-f9f5bd178338)
+
+![8](https://github.com/ATOMworkplace/FinanceCraft/assets/114564628/5fc93393-2dbd-4ba9-a7cc-e13ba90fd21c)
+
+
 <h2>Tech Stack</h2>
 <ul>
 <li><strong>Frontend:</strong> HTML, CSS, JavaScript, Bootstrap</li>
