@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pinescript Integration</title>
+    <link rel="icon" href="/images/candlestick.png">
+    <link rel="stylesheet" href="/css/finalPS.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="fulldiv">
+        <h1 class="pineinfo1" style="margin: 210px;">What is PINESCRIPT?</h1>
+        <br>
+        <br>
+        <ol class="pineinfo2">
+            <ul>
+                * Pine script is a programming language created by TradingView to backtest trading strategies and create custom indicators.
+                <br>
+                <br>
+                * Pine script was designed to be lightweight, and in most cases, you can achieve your objectives with fewer lines of code compared to other programming languages. Pine script code can be created within Pine editor which is a part of TradingView’s online charting platform.
+                <br>
+                <br>
+                * It is a cloud-based lightweight scripting language which is not very complicated or sophisticated but still allows you to do some powerful things with your charts, such as create or customize indicators and tools, backtest strategies and (my personal favourite) — create trading signal alerts.
+                <br>
+                <br>
+            </ul>
+        </ol>
+        <h2 class="working">How does Pinescript work?</h2>
+        <ol class="working1">
+            <ul>
+                * Pine Script is a domain-specific programming language used for creating custom technical analysis indicators, strategies, and scripts on the TradingView platform. 
+            </ul>
+            <ul class="working2">
+                
+                Here's a brief overview of how Pine Script works:
+
+                1. Syntax and Structure:
+                - Pine Script has a syntax similar to JavaScript and C, making it accessible to users with programming experience.
+                - The script is structured into a series of functions, such as `study()` for indicators or `strategy()` for trading strategies.
+                <br>
+                <br>
+                2. Data Handling:
+                - Pine Script operates on historical price data and executes calculations bar by bar.
+                - It provides access to various built-in variables, like `close`, `open`, `high`, `low`, and `volume`, which represent the price data of each bar.
+                <br>
+                <br>
+                3. Plotting:
+                - Traders use the `plot()` function to display information on the chart, such as lines, shapes, or labels.
+                - Plots are based on the calculations performed using historical or real-time data.
+                <br>
+                <br>
+                4. Conditional Statements:
+                - Pine Script supports conditional statements like `if`, `else if`, and `else`, allowing you to create logic for specific conditions.
+                - Conditions are evaluated bar by bar, helping you make decisions based on the historical data.
+                <br>
+                <br>
+                5. Variables and Assignments:
+                - You can declare and use variables to store values and simplify code.
+                - Assignments are used to update variable values based on calculations or conditions.
+                <br>
+                <br>
+                6. Functions:
+                - Pine Script includes a variety of built-in functions for mathematical calculations, technical analysis, and trading operations.
+                - Users can create custom functions to modularize and reuse code.
+                <br>
+                <br>
+                7. Backtesting:
+                - TradingView provides a backtesting environment where you can test your scripts against historical data.
+                - The `strategy()` function is crucial for creating automated trading strategies, allowing you to specify entry and exit conditions.
+                <br>
+                <br>
+                8. Alerts and Notifications:
+                - Pine Script supports the creation of alerts, enabling you to receive notifications or signals based on specific conditions in your script.
+                <br>
+                <br>
+                9. Publishing and Sharing:
+                - Traders can publish their Pine Script indicators and strategies on the TradingView platform, allowing others to use and learn from their work.
+                - Pine Script's sharing capabilities contribute to a collaborative community of script developers.
+                <br>
+                <br>
+            </ul>
+        </ol>
+        <hr>
+        <h2 class="indicators" style="margin: 340px;">Indicators</h1>
+        <ol class="indicators1">
+            <ul class="indicators2">
+                * In the context of the stock market and trading, indicators are tools or mathematical 
+                  calculations that traders and analysts use to gain insights into the price movements 
+                  and potential future trends of financial instruments, such as stocks, currencies, or 
+                  commodities. These indicators are derived from historical price and volume data and 
+                  are plotted on price charts or in separate panels below the price chart. Traders use
+                  indicators to make informed decisions about buying or selling assets.
+            </ul>
+        </ol>
+        <ul class="indicators3"> Two most commonly used indicators are : 
+            <br>
+            <br>
+            <ol class="indicators3">
+                *	RELATIVE STRENGTH INDEX (RSI)
+                <br>
+                <br>
+                The Relative Strength Index (RSI) is a popular momentum oscillator that is used to measure 
+                the speed and change of price movements. It is a technical indicator commonly employed in 
+                financial markets, including stocks, forex, and commodities. The RSI helps traders and analysts
+                identify overbought or oversold conditions in a market, potentially signalling a reversal or 
+                correction in the price trend.
+                <br>
+                <br>
+                Here's a breakdown of how the Relative Strength Index works:
+                <br>
+                <br>
+                1. Calculation:
+                    <br>
+                    <br>
+                   - The RSI is calculated using the following formula:
+                    <br>
+                    <br>
+                    <img class="RSIimage" src="/images/RSI.jpg" alt="RSI image">
+                    where RS (Relative Strength) is the average gain divided by the average loss over a specified period.
+                    <br>
+                    <br>
+                    - The standard period used for RSI calculations is 14, meaning it looks at the average gain and average
+                      loss over the last 14 periods (which could be days, hours, weeks, etc., depending on the chart's timeframe).
+                      <br>
+                      <br>
+                2. Interpretation:
+                    <br>
+                    <br>
+                      - RSI values range from 0 to 100.
+                    <br>
+                      - Traditionally, an RSI value above 70 is considered overbought, suggesting that the asset may be due for a 
+                        price correction or reversal to the downside.
+                    <br>
+                      - Conversely, an RSI value below 30 is considered oversold, indicating that the asset may be due for a bounce
+                       or reversal to the upside.
+                    <br>
+                    <br>
+                   3. Divergence:
+                    <br>
+                    <br>
+                      - Traders also pay attention to divergence between the RSI and the price chart. For example, if the price is
+                        making new highs, but the RSI is not confirming those highs (i.e., not making new highs), it might indicate
+                        weakening momentum and a potential reversal.
+                    <br>
+                    <br>
+                   4. Signal Generation:
+                    <br>
+                    <br>
+                      - RSI crossovers of the 70 or 30 levels are often used as signals. A crossover above 70 might signal a potential
+                        sell (overbought condition), and a crossover below 30 might suggest a potential buy (oversold condition).
+                    <br>
+                    <br>                   
+                   5. Trend Confirmation:
+                    <br>
+                    <br>
+                      - RSI can be used to confirm the strength of a trend. For instance, in a strong uptrend, the RSI tends to remain 
+                        in the overbought range, and in a strong downtrend, it tends to stay in the oversold range.
+                    <br>
+                    <br>
+                   It's important to note that while the RSI is a valuable tool, it should be used in conjunction with other technical and
+                   fundamental analysis tools for comprehensive decision-making. Also, markets can remain in overbought or oversold conditions 
+                   for extended periods, so RSI signals should be considered along with the broader market context.
+                    <br>
+                    <br>  
+                    <br> 
+                *    VOLUME-WEIGHTED AVERAGE PRICE (VWAP)
+                <br>
+                <br>
+                
+                     The Volume-Weighted Average Price (VWAP) is a trading benchmark used by traders and investors to measure the average price 
+                     of a financial instrument (such as a stock) over a specified time period, taking into account both the price and the trading
+                     volume. It provides a more comprehensive view of the average price by giving more weight to periods with higher trading volume.
+
+                <br>
+                <br>
+                Here's how VWAP is calculated:
+                <br>
+                <br>
+                1. Calculate Typical Price: The typical price for a period is calculated as the average of the high, low, and closing prices for that period. 
+                <br>
+                <br>
+                2. Calculate Volume-Weighted Typical Price: Multiply the typical price by the volume for that period.
+                <br>
+                <br>
+                    The formula is:
+                <img class="vwap" src="/images/vwap.jpg" alt="vwap formula">
+                <br>
+                <br>
+                The numerator represents the sum of the products of typical price and volume for each period, and the denominator is the sum of the volumes over the same period.
+                <br>
+                <br>
+                VWAP is often displayed as a continuous line on an intraday chart, with each point representing the VWAP for a specific time interval. Traders use VWAP for several purposes:
+                <br>
+                <br>
+                1. Benchmark for Institutional Traders: Institutional traders use VWAP as a benchmark to assess the efficiency of their trades. They aim to execute trades at prices better than the VWAP to achieve positive performance.
+                <br>
+                <br>
+                2. Intraday Trend Identification: Traders use VWAP to identify the intraday trend. If the current price is above the VWAP, it may indicate a bullish trend, and if it's below, it may indicate a bearish trend.
+                <br>
+                <br>
+                3. Support and Resistance: VWAP can act as a dynamic support or resistance level. Traders may use it as a reference point for determining potential entry or exit points.
+                <br>
+                <br>
+                4. Volume Confirmation: VWAP considers both price and volume, providing a more holistic view of market activity. Sudden price moves with low volume may be less significant than moves with high volume.
+                <br>
+                <br>
+                5. Algorithmic Trading: VWAP is commonly used in algorithmic trading strategies to execute large orders over time without significantly impacting the market.
+                <br>
+                <br>
+            </ol>
+            <br>
+            <br>
+        </ul>
+        <hr>
+        <hr>
+    <div>    
+        <h2 class="pscodes" style="margin: 270px;">Pinescript Codes</h2>
+        <br>
+        <br>
+    </div>
+        <br>
+        <br>
+        <hr>
+        <hr>
+        <br>
+        * There are two indicators that should be used by all the beginner traders 
+        <br>
+        <br>
+<div class="parent">
+        1. Volume-Weighted Average Price.
+        <br>
+        This code works best for BANK-NIFTY index listed in the Indian Stock Market.
+        <br>
+        <br>
+        2. Relative Strength Index.
+        <br>
+        This code works relative to any stock listed in Indian Stock Market.
+        <br>
+        <br>
+        <hr>
+        <hr>   
+        <div class="code-box">
+        <h2> Code for Volume-Weighted Average Price Indicator </h2>
+        <ul class="VWAPcodePS">
+            //@version=5
+            <br>
+            strategy("VWAP Buy/Sell Strategy with Volume Filter", shorttitle="VWAP Strategy", overlay = true)
+            <br>
+            // Input for VWAP length
+            <br>
+            vwapLength = input.int(15, title = "VWAP Length")
+            <br>
+            // Input for minimum volume
+            <br>
+            minVolume = input.float(400000, title = "Minimum Volume")
+            <br>
+            // Calculate VWAP
+            <br>
+            vwap = ta.vwma(close, vwapLength)
+            <br>
+            // Calculate the crossover condition
+            <br>
+            crossUpCondition = ta.crossover(close, vwap) and volume > minVolume
+            <br>
+            crossDownCondition = ta.crossunder(close, vwap) and volume > minVolume
+            <br>
+            // Define and execute buy and sell actions
+            <br>
+            if (crossUpCondition)
+            <ol>strategy.entry("Buy", strategy.long)</ol>
+            if (crossDownCondition)
+            <ol>strategy.entry("Sell", strategy.short)</ol>
+        </ul>
+        </div>
+        <br>
+        <br>
+        <button id="copybuttonVWAP">Copy VWAP Code</button>
+        <br>
+        <br>
+        <script src="/images/copy button.js"></script>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div id="codebox" class="code-box">
+        <h2 class="rsicode">Code for Relative Strength Index</h2>
+        <p class="rsicode1">
+            //@version=5
+            indicator("RSI Based Strategy with Stop Loss", overlay=true)
+            <br>
+            length = input(14) <br>
+            overSold = input(30) <br>
+            overBought = input(70) <br>
+            price = close <br>
+            vrsi = ta.rsi(price, length) <br>
+            crossover = ta.crossover(vrsi, overSold) <br>
+            crossunder = ta.crossunder(vrsi, overBought) <br>
+            <br>
+            long = crossover and not na(vrsi) <br>
+            short = crossunder and not na(vrsi) <br>
+            <br>
+            var float stopLossLong = na <br>
+            var float stopLossShort = na <br>
+            <br>
+            if long <br>
+               stopLossLong := low[1] <br>
+            <br>
+            if short <br>
+               stopLossShort := high[1] <br>
+            <br>
+            plotshape(long, style=shape.labelup, location=location.belowbar, color=color.new(#00ff2f, 43), size=size.large, text='Buy', textcolor=color.new(color.white, 0)) <br>
+            plotshape(short, style=shape.labeldown, location=location.abovebar, color=color.new(#ff0000, 36), size=size.large, text='Sell', textcolor=color.new(color.white, 0)) <br>
+            <br>
+            // Plot stop loss levels on the chart 
+            plotshape(long, style=shape.triangleup, location=location.belowbar, color=color.red, size=size.small, text='Stop Loss', textcolor=color.white) <br>
+            plotshape(short, style=shape.triangledown, location=location.abovebar, color=color.green, size=size.small, text='Stop Loss', textcolor=color.white) <br>
+            <br>
+            // Plot horizontal lines for stop loss levels
+            plot(stopLossLong, color=color.red, style=plot.style_line, title="Stop Loss Long") <br>
+            plot(stopLossShort, color=color.green, style=plot.style_line, title="Stop Loss Short") <br>
+            <br>
+        </p>
+    </div>
+        <br>
+        <br> 
+    <button id="copyButton">Copy RSI Code</button>
+    <script src="/images/copybuttonRSI.js"></script>
+    <br>
+    <br>
+    </div>
+    <br>
+    <br>
+    <h2 style="margin: 540px;">DISCLAIMER</h2>
+    <p style="color: white;" class="disclaimer">ALL THE DISCUSSED ABOVE INDICATORS ARE INTENDED TO HELP IN TAKING DECISIONS WHETHER TO TRADE OR NOT AND IS NOT AN INVESTMENT ADVICE IN ALL SORTS. 
+    </p>
+    <br>
+    <br>
+    <br>
+    <div class="footer">
+        <p>Part of the project "FINANCECRAFT" @Ojas Labhe</p>
+    </div>
+</body>
+</html>

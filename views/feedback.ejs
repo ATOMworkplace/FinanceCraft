@@ -1,0 +1,139 @@
+<%- include('partials/header2.ejs'); -%>
+<div class="user-div">
+    <div class="User-h1">
+        <br>
+        <h1>USER FEEDBACK</h1>
+
+
+    </div>
+    <div class="span-h1">
+        
+        <span>Your thoughts matter! Share your feedback and help us shine.</span>
+    </div>
+    <div class="img-user">
+        <img src="/images/feedbackformpic.gif" class="img-1-user" >
+    </div>
+    <br>
+    <br>
+    <a class="button-c-2" href="#feedback-part">Give Feedback</a>
+    <br>
+    <br>
+    <br>
+
+</div>
+</div>
+
+<section id="feedback-part">
+<div class="feedback-1">
+    
+    
+    <div class="feedback-1-container">
+
+        <h1>We Value Your Feedback !!</h1>
+
+    </div>
+    
+    <div class="feedback-2-container">
+        <br>
+        <div class="feed-form">
+            <div class="feedback-pd">
+        
+                <h2>Personal Details :</h2>
+            </div>
+            <br>
+
+            <div class="tab-name">
+                <div class="ps-c-1"><h2>Name :</h2></div>
+                <p><input placeholder="First name..." oninput="this.className = ''" name="fname" id="input-n"></p>
+                <p><input placeholder="Last name..." oninput="this.className = ''" name="lname" id="input-n"></p>
+            </div>
+            <div class="tab-contact">
+                <div class="ps-c-1"><h2>Contact-Info :</h2></div>
+                <p><input placeholder="E-mail..." oninput="this.className = ''" name="email" id="input-n"></p>
+                <p><input placeholder="Phone..." oninput="this.className = ''" name="phone" id="input-n"></p>
+            </div>
+            <hr class="hr-user">
+            <div class="rating-sec">
+                <div class="feedback-sye">
+                    
+                    <h2>Share Your Experience</h2>
+                </div>
+            
+                <div class="question-feed">
+                    <br>
+                    <div>
+                    <h2>Rate your overall experience out of five while using our website.</h2>
+                    </div>
+                    
+                    <div class="rate-div">
+                        <select id="rate" name="rate">
+                            <option value="0" id="scroller">0</option>
+                            <option value="1" id="scroller">1</option>
+                            <option value="2" id="scroller">2</option>
+                            <option value="3" id="scroller">3</option>
+                            <option value="4" id="scroller">4</option>
+                            <option value="5" id="scroller">5</option>
+                        </select>
+                    </div>
+                </div>
+        
+                <div class="question-feed">
+                    <br>
+                    <div>
+                    <h2>How much you rate the accuracy level of our prediction functionality out of five ? </h2>
+                    </div>
+                    <div class="rate-div">
+                        <select id="rate" name="rate">
+                            <option value="0" id="scroller">0</option>
+                            <option value="1" id="scroller">1</option>
+                            <option value="2" id="scroller">2</option>
+                            <option value="3" id="scroller">3</option>
+                            <option value="4" id="scroller">4</option>
+                            <option value="5" id="scroller">5</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="question-feed">
+                    <br>
+                    <div>
+                    <h2>How much you rate our guide section and analysis section out of five ? </h2>
+                    </div>
+                    <div class="rate-div">
+                        <select id="rate" name="rate">
+                            <option value="0" id="scroller">0</option>
+                            <option value="1" id="scroller">1</option>
+                            <option value="2" id="scroller">2</option>
+                            <option value="3" id="scroller">3</option>
+                            <option value="4" id="scroller">4</option>
+                            <option value="5" id="scroller">5</option>
+                        </select>
+                    </div>
+                </div>
+        </div>
+        <hr class="hr-user">
+        <div class="suggestions-feed">
+            <br>
+            <div>
+            <h2>Do you have any suggestions for how we can enhance our website and services?</h2>
+            </div> 
+            <div class="suggest">
+                <p class="suggest-p"><input placeholder="plz give your valuable suggestions here........." oninput="this.className = ''" name="Suggestion" type="text" id="input-s"></p>
+            </div>        
+            </div>
+            <div>
+                <input type="submit" id="btn-feedback-submit" onclick="done">
+            </div>
+            <br>
+            <div id="thankyoumessage">Thank you for your feedback!!</div>
+
+            <br>
+        </div>
+    </div>
+
+
+</div>
+</section>
+<script src="Feedbackform.js"></script>
+</body>
+</html>
+<%- include('partials/footer.ejs'); -%>

@@ -1,0 +1,88 @@
+html{
+    background-image: url("/images/digital-8280787.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+}
+.fulldiv{
+    background-color: rgba(0, 0, 0, 0.42); 
+    animation: fadeinright 1s ease-in-out;
+    background-color: rgba(255, 255, 255, 0.68);
+    padding: 10px;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 800px; 
+}
+@keyframes fadeinright {
+    from{
+        opacity: 0;
+        transform: translateX(300px);
+    }
+    to{
+        opacity: 1;
+    }
+    
+}
+
+body {
+    color: #000000; /* Set text color to white */
+    font-family: 'Gabarito', sans-serif; /* Use the custom font */
+    padding: 0;
+    margin: 0;
+    font-size: larger;
+}
+
+h1, h2, h3 {
+    color: rgb(227, 39, 39);
+    display:inline;
+}
+
+/* Create a neon glow effect */
+.neon-text {
+    text-shadow: 0 0 10px #0af, 0 0 20px #0af, 0 0 30px #0af;
+}
+.code-box {
+    background: #000000;
+    width:fit-content;
+
+    color:rgb(255, 255, 255);
+    border: 10px solid rgb(255, 255, 255);
+    padding: 10px;
+}
+
+/* Style buttons */
+button {
+    background: rgb(255, 255, 255);
+    color: #000;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: 320px;
+}
+
+button:hover {
+    background: #09d; /* Slightly lighter blue for button hover effect */
+}
+
+/* Style links */
+a {
+    color: #0af;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #09d; /* Slightly lighter blue for link hover effect */
+}
+.footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    text-align: left;
+  }
+.disclaimer{
+    background-color: red;
+}
