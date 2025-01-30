@@ -1,109 +1,89 @@
 <h1>FinanceCraft</h1>
-<p>FinanceCraft is a comprehensive financial analysis and prediction tool that combines cutting-edge machine learning algorithms with intuitive web development to empower users with insights into stock market behavior.</p>
+
+<p>
+FinanceCraft is a comprehensive stock market analysis and prediction project. It blends advanced technical indicators with a machine learning Random Forest Classifier to achieve high accuracy (over 80%) in predicting whether a stock's next-day closing price will be higher or lower than today's.
+</p>
 
 <h2>Overview</h2>
-<p>In today's dynamic financial landscape, making informed investment decisions is crucial for success. FinanceCraft serves as your gateway to the world of stock market analysis and prediction. Leveraging advanced machine learning techniques and robust web development technologies, FinanceCraft provides users with personalized tools to forecast stock market trends and make well-informed investment choices.</p>
-
-<h2>Key Features</h2>
+<p>
+This project demonstrates how to:
+</p>
 <ul>
-<li><strong>Machine Learning Algorithms:</strong> FinanceCraft harnesses the power of machine learning algorithms such as Random Forest, Support Vector Machine (SVM), and Linear Regression to analyze historical stock market data and predict future trends with high accuracy.</li>
-<li><strong>Web Development:</strong> The core of FinanceCraft lies in its user-friendly web interface. Developed using HTML, CSS, JavaScript, Express.js, and Node.js, the website offers seamless navigation and interaction, providing users with an immersive experience.</li>
-<li><strong>Data Integration:</strong> FinanceCraft integrates with APIs such as Alpha Vantage and Yahoo Finance to fetch real-time and historical stock market data. This data is then processed and analyzed to generate valuable insights for users.</li>
+  <li><strong>Gather historical stock data</strong> (using <code>yfinance</code>)</li>
+  <li><strong>Compute advanced technical indicators</strong> (e.g. RSI, Bollinger Bands, ADX, etc.)</li>
+  <li><strong>Construct a classification target</strong> (Up or Down) for the next trading day</li>
+  <li><strong>Train and tune a Random Forest Classifier</strong> to predict upward vs. downward price movement</li>
+  <li><strong>Visualize results</strong> (price/indicators, cumulative returns, etc.)</li>
+  <li><strong>Implement a dynamic loading bar</strong> (via <code>ipywidgets</code>) to track progress</li>
+  <li><strong>Display a real-time stock snapshot</strong> for user reference</li>
 </ul>
 
-<h2>Demo and Screenshots</h2>
+<h2>Key Algorithms & Indicators</h2>
 
-https://github.com/ATOMworkplace/FinanceCraft/assets/114564628/79f9cfea-9918-49b6-9e9e-6edd7c671fa8
-
-
-https://github.com/ATOMworkplace/FinanceCraft/assets/114564628/e16aa83e-6134-4529-9509-93ebbe6872dc
-
-
-![1](https://github.com/ATOMworkplace/FinanceCraft/assets/114564628/f3b2ee69-f1d7-4616-887f-8fc15ac8aa4c)
-
-![2](https://github.com/ATOMworkplace/FinanceCraft/assets/114564628/c2c72b18-aa3b-43de-8bb0-324ac3372c5f)
-
-![3](https://github.com/ATOMworkplace/FinanceCraft/assets/114564628/300adc38-8549-4225-b2d9-14a397f3b9ca)
-
-![4](https://github.com/ATOMworkplace/FinanceCraft/assets/114564628/3401e09d-aaf7-4978-b572-6c05dd8cb015)
-
-![5](https://github.com/ATOMworkplace/FinanceCraft/assets/114564628/213afc3e-5ed5-488e-ba8d-b83d4b85bc9b)
-
-![6](https://github.com/ATOMworkplace/FinanceCraft/assets/114564628/02ca9070-35b8-4e92-98df-f9f5bd178338)
-
-![8](https://github.com/ATOMworkplace/FinanceCraft/assets/114564628/5fc93393-2dbd-4ba9-a7cc-e13ba90fd21c)
-
-
-<h2>Tech Stack</h2>
+<h3>Technical Indicators</h3>
 <ul>
-<li><strong>Frontend:</strong> HTML, CSS, JavaScript, Bootstrap</li>
-<li><strong>Backend:</strong> Node.js, Express.js</li>
-<li><strong>Machine Learning:</strong> Python, Jupyter Notebook</li>
-<li><strong>Machine Learning Libraries:</strong> Pandas, Scikit-learn</li>
-<li><strong>APIs:</strong> Alpha Vantage, Yahoo Finance</li>
-<li><strong>Data Visualization:</strong> Matplotlib, Plotly</li>
+  <li><strong>RSI (Relative Strength Index):</strong> Measures momentum by comparing recent gains and losses. If RSI is above 70, the market is often considered overbought; below 30, oversold.</li>
+  <li><strong>Bollinger Bands:</strong> Uses a moving average and standard deviation to form upper and lower bands, indicating volatility and potential overbought/oversold levels.</li>
+  <li><strong>MACD (Moving Average Convergence Divergence):</strong> Tracks momentum via difference between two EMAs and a signal line. Crossovers can hint at changing trends.</li>
+  <li><strong>ADX (Average Directional Index):</strong> Gauges trend strength by comparing positive and negative directional movements.</li>
+  <li><strong>ATR (Average True Range):</strong> Measures market volatility using daily price range expansions.</li>
+  <li><strong>Stochastic Oscillator:</strong> Compares a closing price to a price range over a set period, indicating potential reversals.</li>
+  <li><strong>Williams %R:</strong> Like Stochastic, measures overbought/oversold conditions.</li>
+  <li><strong>OBV (On-Balance Volume):</strong> Assesses volume flow to gauge buying/selling pressure.</li>
 </ul>
+
+<p>
+These indicators help capture various <em>momentum</em>, <em>trend</em>, and <em>volatility</em> signals. Combining them provides a broader perspective of market conditions, improving the model’s predictive power for price direction.
+</p>
+
+<h3>Random Forest Classifier</h3>
+<ul>
+  <li><strong>Ensemble of Decision Trees:</strong> Random Forest trains multiple decision trees and averages their outputs, reducing overfitting and variance.</li>
+  <li><strong>Bootstrap Sampling & Random Subspace:</strong> Each tree is trained on a random subset of data (rows) and features (columns), ensuring diversity among trees.</li>
+  <li><strong>Majority Voting for Classification:</strong> Each tree votes on whether the price will go up or down. The final prediction is the majority vote.</li>
+  <li><strong>Why It Helps:</strong> Ensemble methods typically outperform single trees, especially on noisy financial data. They’re also robust to correlated indicators and missing data.</li>
+</ul>
+
+<p>
+By combining <strong>advanced technical indicators</strong> (for rich feature engineering) with the <strong>Random Forest</strong> classification approach, FinanceCraft can capture diverse market signals and reduce noise, aiming for over 80% classification accuracy on the next-day price direction.
+</p>
 
 <h2>Implementation</h2>
-<h3>Web Development</h3>
-<p>FinanceCraft's web interface is designed with user experience in mind. Using HTML, CSS, and JavaScript, we create dynamic web pages that allow users to navigate seamlessly and interact with the platform's features. Express.js and Node.js power the backend, handling server-side logic and API requests.</p>
+<p>
+Below is the full code in one cell. You can copy/paste it as a standalone <code>README.md</code> or Python/Notebook cell. It uses the <strong>RandomForestClassifier</strong> to classify the next day’s close as higher or lower, with a dynamic loading bar to track progress, plus real-time stock snapshots for user reference.
+</p>
+<h2>How the Code Works</h2>
+<ol>
+  <li><strong>Data Fetching:</strong> Uses <code>yfinance</code> to get 5 years of historical data for <code>AAPL</code>.</li>
+  <li><strong>Indicator Computation:</strong> Calculates RSI, Bollinger Bands, MACD, etc., capturing different market signals (momentum, volatility, etc.).</li>
+  <li><strong>Classification Target:</strong> Labels each row with <code>1</code> if the next day’s close is higher, else <code>0</code>.</li>
+  <li><strong>Feature Preparation:</strong> Merges multiple signals into features, creating an array <code>X</code> for the model.</li>
+  <li><strong>Random Forest Classifier:</strong> 
+    <ul>
+      <li>Uses <code>GridSearchCV</code> with <code>TimeSeriesSplit</code> to tune hyperparameters (e.g., <code>max_depth, n_estimators</code>).</li>
+      <li>Aims to exceed <strong>80% accuracy</strong> by leveraging ensemble learning on multiple diverse features.</li>
+    </ul>
+  </li>
+  <li><strong>Backtesting Logic:</strong> 
+    <ul>
+      <li>Transforms predicted classes into trading signals (long if up, short if down).</li>
+      <li>Combines <code>CombinedSignal</code> with model predictions to refine trades.</li>
+      <li>Computes daily returns and cumulative returns to illustrate performance.</li>
+    </ul>
+  </li>
+  <li><strong>Visualization & Real-Time Snapshot:</strong> 
+    <ul>
+      <li>Plots Bollinger, MACD, RSI for a broad technical overview.</li>
+      <li>Displays a real-time 1-month snapshot of the same ticker’s close price.</li>
+    </ul>
+  </li>
+</ol>
 
-<h3>Machine Learning</h3>
-<p>In the backend, Python and Jupyter Notebook serve as the foundation for implementing machine learning algorithms. Leveraging libraries such as Pandas and Scikit-learn, we preprocess and analyze historical stock market data. The trained models, including Random Forest, SVM, and Linear Regression, enable FinanceCraft to forecast stock market trends accurately.</p>
+<h2>Conclusion</h2>
+<p>
+FinanceCraft showcases how combining multiple <strong>technical indicators</strong> with a well-tuned <strong>Random Forest Classifier</strong> can yield higher accuracy (our target: &gt;80%) for predicting next-day price movement. It also demonstrates fundamental backtesting logic, allowing you to compare a simple strategy’s returns against the general market.
+</p>
 
-<h3>Data Integration</h3>
-<p>FinanceCraft integrates with Alpha Vantage and Yahoo Finance APIs to fetch real-time and historical stock market data. This data is then processed, cleaned, and transformed into actionable insights using Python's data manipulation capabilities.</p>
-
-<h2>Results and Performance Analysis</h2>
-<h3>Random Forest</h3>
-<p>The Random Forest model achieves an accuracy score of approximately 50%, indicating performance comparable to random guessing. Further enhancements, such as feature engineering and hyperparameter tuning, are recommended to improve predictive accuracy.</p>
-
-<h3>SVM (Support Vector Machine)</h3>
-<p>The SVM classifier provides an interactive interface for users to select stock symbols and date ranges. It fetches historical data from Yahoo Finance API, calculates binary variables, and visualizes decision boundaries. Interactive widgets allow users to explore and analyze stock price trends effectively.</p>
-
-<h2>Website Implementation</h2>
-<h2>Website Implementation Details</h2>
-
-<p>FinanceCraft's website implementation involves using several technologies such as Express.js, EJS, and HTML/CSS/JavaScript to create dynamic web pages for stock analysis.</p>
-
-<h3>Setup and Dependencies:</h3>
-<p>The server-side setup involves using Express.js to create routes and handle requests. Body-parser is used for parsing request bodies, while EJS is the templating engine. HTTP module is utilized for making API requests.</p>
-
-<h3>Routing:</h3>
-<p>Different routes are defined for various pages such as the home page ("/") and analysis page ("/analyse"). Each route renders a specific EJS template.</p>
-
-<h3>Data Retrieval:</h3>
-<p>The "/daily-data" route fetches daily stock market data using the Alpha Vantage API. It retrieves data for a specified stock symbol (default is 'AAPL').</p>
-
-<h3>Presentation:</h3>
-<p>The fetched data is presented in a tabular format on the webpage. A form allows users to enter a stock symbol, and upon submission, the corresponding data is fetched and displayed dynamically without the need for page reload.</p>
-
-<h3>Interactive User Interface:</h3>
-<p>Users can input a stock symbol and fetch its daily data by clicking the "Fetch Data" button. The retrieved data, including date, open, high, low, close, and volume, is displayed in a table below the form.</p>
-
-<h3>Technical Analysis:</h3>
-<p>A link is provided for conducting technical analysis using external tools. Users can click the link to access additional analysis tools.</p>
-
-
-<h2>Data Retrieval and Preprocessing:</h2>
-<ul>
-  <li>Python libraries such as yfinance, pandas, pandas_ta, and scikit-learn are used for data retrieval and preprocessing.</li>
-  <li>Historical stock market data is fetched using yfinance.</li>
-  <li>Technical indicators such as Average Directional Index (ADX), Relative Strength Index (RSI), Exponential Moving Average (EMA), and Simple Moving Average (SMA) are calculated using pandas_ta.</li>
-  <li>Features such as open, high, low, close prices, volume, ADX, RSI, EMA, and SMA are extracted and normalized using scikit-learn's MinMaxScaler.</li>
-</ul>
-
-<h2>Model Training and Evaluation:</h2>
-<ul>
-  <li>A Random Forest classifier is trained on the preprocessed data to predict stock price direction.</li>
-  <li>The model is evaluated using accuracy score to assess its performance.</li>
-  <li>Results are displayed using visualizations such as bar plots to compare actual and predicted price directions.</li>
-</ul>
-
-<h2>Interactive User Interface:</h2>
-<ul>
-  <li>Users can input a stock symbol to fetch corresponding data.</li>
-  <li>The interface dynamically updates based on the selected stock symbol, displaying the retrieved data and prediction results.</li>
-  <li>Widgets are provided for user interaction, enabling seamless exploration and analysis of stock price trends.</li>
-</ul>
-
+<p>
+<strong>Note:</strong> Real-world performance will vary with market conditions, data availability, transaction costs, and domain-specific constraints. Ongoing refinement (feature engineering, deeper hyperparameter optimization, or ensemble modeling) can further boost accuracy.
+</p>
