@@ -1,7 +1,7 @@
 <h1>FinanceCraft</h1>
 
 <p>
-FinanceCraft is a comprehensive stock market analysis and prediction project. It blends advanced technical indicators with a machine learning Random Forest Classifier to achieve high accuracy (over 80%) in predicting whether a stock's next-day closing price will be higher or lower than today's.
+FinanceCraft is an advanced stock market analysis and prediction project. It integrates a range of technical indicators with a Random Forest Classifier to forecast whether a stock's next-day closing price will rise or fall.
 </p>
 
 <h2>Overview</h2>
@@ -10,9 +10,9 @@ This project demonstrates how to:
 </p>
 <ul>
   <li><strong>Gather historical stock data</strong> (using <code>yfinance</code>)</li>
-  <li><strong>Compute advanced technical indicators</strong> (e.g. RSI, Bollinger Bands, ADX, etc.)</li>
+  <li><strong>Compute advanced technical indicators</strong> (e.g., RSI, Bollinger Bands, MACD)</li>
   <li><strong>Construct a classification target</strong> (Up or Down) for the next trading day</li>
-  <li><strong>Train and tune a Random Forest Classifier</strong> to predict upward vs. downward price movement</li>
+  <li><strong>Train and tune a Random Forest Classifier</strong> to predict price movement direction</li>
   <li><strong>Visualize results</strong> (price/indicators, cumulative returns, etc.)</li>
   <li><strong>Implement a dynamic loading bar</strong> (via <code>ipywidgets</code>) to track progress</li>
   <li><strong>Display a real-time stock snapshot</strong> for user reference</li>
@@ -22,68 +22,79 @@ This project demonstrates how to:
 
 <h3>Technical Indicators</h3>
 <ul>
-  <li><strong>RSI (Relative Strength Index):</strong> Measures momentum by comparing recent gains and losses. If RSI is above 70, the market is often considered overbought; below 30, oversold.</li>
-  <li><strong>Bollinger Bands:</strong> Uses a moving average and standard deviation to form upper and lower bands, indicating volatility and potential overbought/oversold levels.</li>
-  <li><strong>MACD (Moving Average Convergence Divergence):</strong> Tracks momentum via difference between two EMAs and a signal line. Crossovers can hint at changing trends.</li>
-  <li><strong>ADX (Average Directional Index):</strong> Gauges trend strength by comparing positive and negative directional movements.</li>
-  <li><strong>ATR (Average True Range):</strong> Measures market volatility using daily price range expansions.</li>
-  <li><strong>Stochastic Oscillator:</strong> Compares a closing price to a price range over a set period, indicating potential reversals.</li>
-  <li><strong>Williams %R:</strong> Like Stochastic, measures overbought/oversold conditions.</li>
-  <li><strong>OBV (On-Balance Volume):</strong> Assesses volume flow to gauge buying/selling pressure.</li>
+  <li><strong>RSI (Relative Strength Index):</strong> Measures momentum by comparing recent gains and losses. Indicates overbought or oversold conditions.</li>
+  <li><strong>Bollinger Bands:</strong> Utilizes a moving average and standard deviation to form upper and lower bands, highlighting volatility and potential price extremes.</li>
+  <li><strong>MACD (Moving Average Convergence Divergence):</strong> Tracks momentum through the difference between two EMAs and a signal line. Crossovers suggest trend changes.</li>
+  <li><strong>ADX (Average Directional Index):</strong> Assesses trend strength by comparing positive and negative directional movements.</li>
+  <li><strong>ATR (Average True Range):</strong> Measures market volatility based on daily price range expansions.</li>
+  <li><strong>Stochastic Oscillator:</strong> Compares a closing price to a price range over a set period, signaling potential reversals.</li>
+  <li><strong>Williams %R:</strong> Similar to Stochastic, it identifies overbought or oversold conditions.</li>
+  <li><strong>OBV (On-Balance Volume):</strong> Evaluates volume flow to determine buying or selling pressure.</li>
 </ul>
 
 <p>
-These indicators help capture various <em>momentum</em>, <em>trend</em>, and <em>volatility</em> signals. Combining them provides a broader perspective of market conditions, improving the model’s predictive power for price direction.
+These indicators capture various <em>momentum</em>, <em>trend</em>, and <em>volatility</em> signals. Combining them provides a comprehensive view of market conditions, enhancing the model’s ability to predict price direction.
 </p>
 
 <h3>Random Forest Classifier</h3>
 <ul>
-  <li><strong>Ensemble of Decision Trees:</strong> Random Forest trains multiple decision trees and averages their outputs, reducing overfitting and variance.</li>
-  <li><strong>Bootstrap Sampling & Random Subspace:</strong> Each tree is trained on a random subset of data (rows) and features (columns), ensuring diversity among trees.</li>
-  <li><strong>Majority Voting for Classification:</strong> Each tree votes on whether the price will go up or down. The final prediction is the majority vote.</li>
-  <li><strong>Why It Helps:</strong> Ensemble methods typically outperform single trees, especially on noisy financial data. They’re also robust to correlated indicators and missing data.</li>
+  <li><strong>Ensemble of Decision Trees:</strong> Trains multiple decision trees and aggregates their outputs, reducing overfitting and variance.</li>
+  <li><strong>Bootstrap Sampling & Random Subspace:</strong> Each tree is trained on a random subset of data and features, ensuring diversity among trees.</li>
+  <li><strong>Majority Voting for Classification:</strong> Each tree votes on the price movement direction. The final prediction is based on the majority vote.</li>
+  <li><strong>Advantages:</strong> Ensemble methods generally outperform single trees, especially with noisy financial data. They are also resilient to correlated indicators and missing data.</li>
 </ul>
 
 <p>
-By combining <strong>advanced technical indicators</strong> (for rich feature engineering) with the <strong>Random Forest</strong> classification approach, FinanceCraft can capture diverse market signals and reduce noise, aiming for over 80% classification accuracy on the next-day price direction.
+By combining <strong>advanced technical indicators</strong> (for comprehensive feature engineering) with the <strong>Random Forest</strong> classification approach, FinanceCraft effectively captures diverse market signals and mitigates noise, aiming to provide reliable predictions for next-day price movements.
 </p>
 
 <h2>Implementation</h2>
 <p>
-Below is the full code in one cell. You can copy/paste it as a standalone <code>README.md</code> or Python/Notebook cell. It uses the <strong>RandomForestClassifier</strong> to classify the next day’s close as higher or lower, with a dynamic loading bar to track progress, plus real-time stock snapshots for user reference.
+Below is the complete code in a single cell. You can copy and paste it as a standalone <code>README.md</code> or Python/Notebook cell. It employs the <strong>RandomForestClassifier</strong> to classify the next day’s close as higher or lower, incorporates a dynamic loading bar to monitor progress, and includes real-time stock snapshots for user reference.
 </p>
 <h2>How the Code Works</h2>
 <ol>
-  <li><strong>Data Fetching:</strong> Uses <code>yfinance</code> to get 5 years of historical data for <code>AAPL</code>.</li>
-  <li><strong>Indicator Computation:</strong> Calculates RSI, Bollinger Bands, MACD, etc., capturing different market signals (momentum, volatility, etc.).</li>
-  <li><strong>Classification Target:</strong> Labels each row with <code>1</code> if the next day’s close is higher, else <code>0</code>.</li>
-  <li><strong>Feature Preparation:</strong> Merges multiple signals into features, creating an array <code>X</code> for the model.</li>
+  <li><strong>Data Fetching:</strong> Utilizes <code>yfinance</code> to retrieve 30 years of historical data for <code>AAPL</code>.</li>
+  <li><strong>Indicator Computation:</strong> Calculates RSI, Bollinger Bands, MACD, and other indicators to capture various market signals (momentum, volatility, etc.).</li>
+  <li><strong>Classification Target:</strong> Labels each entry with <code>1</code> if the next day’s close is higher, else <code>0</code>.</li>
+  <li><strong>Feature Preparation:</strong> Integrates multiple signals into features, creating an array <code>X</code> for the model.</li>
   <li><strong>Random Forest Classifier:</strong> 
     <ul>
-      <li>Uses <code>GridSearchCV</code> with <code>TimeSeriesSplit</code> to tune hyperparameters (e.g., <code>max_depth, n_estimators</code>).</li>
-      <li>Aims to exceed <strong>80% accuracy</strong> by leveraging ensemble learning on multiple diverse features.</li>
+      <li>Uses <code>GridSearchCV</code> with <code>TimeSeriesSplit</code> to optimize hyperparameters (e.g., <code>max_depth, n_estimators</code>).</li>
+      <li>Leverages ensemble learning on diverse features to enhance prediction reliability.</li>
     </ul>
   </li>
   <li><strong>Backtesting Logic:</strong> 
     <ul>
       <li>Transforms predicted classes into trading signals (long if up, short if down).</li>
-      <li>Combines <code>CombinedSignal</code> with model predictions to refine trades.</li>
-      <li>Computes daily returns and cumulative returns to illustrate performance.</li>
+      <li>Combines <code>CombinedSignal</code> with model predictions to refine trading decisions.</li>
+      <li>Calculates daily returns and cumulative returns to assess strategy performance.</li>
     </ul>
   </li>
   <li><strong>Visualization & Real-Time Snapshot:</strong> 
     <ul>
-      <li>Plots Bollinger, MACD, RSI for a broad technical overview.</li>
-      <li>Displays a real-time 1-month snapshot of the same ticker’s close price.</li>
+      <li>Plots Bollinger Bands, MACD, RSI for a comprehensive technical overview.</li>
+      <li>Displays a real-time 1-month snapshot of the ticker’s close price.</li>
     </ul>
   </li>
 </ol>
+<h2>Screenshots</h2>
+
+![image](https://github.com/user-attachments/assets/80ee058f-1616-4637-8ed6-a0ece0d7a0a3)
+
+![image](https://github.com/user-attachments/assets/6372b14f-e130-4969-a30b-0084fc81452a)
+
+![image](https://github.com/user-attachments/assets/61bf6fae-bb06-4b5d-92ca-a95e5c6738d3)
+
+![image](https://github.com/user-attachments/assets/4e95c857-3943-4551-8abe-26a6389e293b)
+
+![image](https://github.com/user-attachments/assets/d3a25fea-e4a6-4d87-8be2-ca6e760c545f)
 
 <h2>Conclusion</h2>
 <p>
-FinanceCraft showcases how combining multiple <strong>technical indicators</strong> with a well-tuned <strong>Random Forest Classifier</strong> can yield higher accuracy (our target: &gt;80%) for predicting next-day price movement. It also demonstrates fundamental backtesting logic, allowing you to compare a simple strategy’s returns against the general market.
+FinanceCraft demonstrates the effective integration of multiple <strong>technical indicators</strong> with a well-tuned <strong>Random Forest Classifier</strong> to predict next-day price movements. It also incorporates fundamental backtesting logic, enabling comparison of the strategy’s returns against the broader market.
 </p>
 
 <p>
-<strong>Note:</strong> Real-world performance will vary with market conditions, data availability, transaction costs, and domain-specific constraints. Ongoing refinement (feature engineering, deeper hyperparameter optimization, or ensemble modeling) can further boost accuracy.
+<strong>Note:</strong> Real-world performance can vary based on market conditions, data quality, transaction costs, and other factors. Continuous refinement through feature engineering, hyperparameter optimization, or advanced modeling techniques can further enhance prediction reliability.
 </p>
