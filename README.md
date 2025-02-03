@@ -92,7 +92,7 @@ Below is the complete code in a single cell. You can copy and paste it as a stan
 
 <h2>Conclusion</h2>
 <p>
-FinanceCraft demonstrates the effective integration of multiple <strong>technical indicators</strong> with a well-tuned <strong>Random Forest Classifier</strong> to predict next-day price movements. It also incorporates fundamental backtesting logic, enabling comparison of the strategy’s returns against the broader market.
+FinanceCraft demonstrates the effective integration of multiple <strong>trading algorithms and technical indicators</strong> with a well-tuned <strong>Random Forest Classifier</strong> to predict next-day price movements. It also incorporates fundamental backtesting logic, enabling comparison of the strategy’s returns against the broader market.
 </p>
 
 <p>
