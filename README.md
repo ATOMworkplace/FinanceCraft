@@ -20,7 +20,7 @@ This project demonstrates how to:
 
 <h2>Key Algorithms & Indicators</h2>
 
-<h3>Technical Indicators</h3>
+<h3>Trading algorithms and Technical Indicators</h3>
 <ul>
   <li><strong>RSI (Relative Strength Index):</strong> Measures momentum by comparing recent gains and losses. Indicates overbought or oversold conditions.</li>
   <li><strong>Bollinger Bands:</strong> Utilizes a moving average and standard deviation to form upper and lower bands, highlighting volatility and potential price extremes.</li>
