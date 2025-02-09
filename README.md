@@ -3,6 +3,9 @@
 <p>
 FinanceCraft is an advanced stock market analysis and prediction project. It integrates a range of technical indicators with a Random Forest Classifier to forecast whether a stock's next-day closing price will rise or fall.
 </p>
+<h2>Website</h2>
+
+https://github.com/user-attachments/assets/5da45e23-c33b-43a0-8816-9a78e4926241
 
 <h2>Overview</h2>
 <p>
