@@ -1,7 +1,7 @@
 <h1>FinanceCraft</h1>
 
 <p>
-FinanceCraft is an advanced stock market analysis and prediction project. It integrates a range of technical indicators with a Random Forest Classifier to forecast whether a stock's next-day closing price will rise or fall.
+FinanceCraft is an advanced stock market analysis and prediction project. It integrates a range of technical indicators with a Random Forest Classifier to forecast whether a stock's next day closing price will rise or fall.
 </p>
 <h2>Website</h2>
 
